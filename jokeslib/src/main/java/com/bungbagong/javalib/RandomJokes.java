@@ -5,7 +5,7 @@ import java.util.Random;
 public class RandomJokes {
 
     private String[] listJokes =
-            {"I used to think the brain was the most important organ. Then I thought, look what’s telling me that.",
+            {"I used to think the brain was the most important organ. Then I thought, look what is telling me that.",
                     "The midget fortune teller who kills his customers is a small medium at large.",
                     "A farmer in the field with his cows counted 196 of them, but when he rounded them up he had 200.",
                     "I wasn't originally going to get a brain transplant, but then I changed my mind.",
