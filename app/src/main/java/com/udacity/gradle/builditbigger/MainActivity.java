@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity {
 
         RandomJokes randomJokes = new RandomJokes();
         String joke = randomJokes.getJoke();
-        Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
 
     }
 
