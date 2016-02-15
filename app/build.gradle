@@ -17,14 +17,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors{
+        free {
+            applicationId "com.udacity.gradle.adsupported.free"
+        }
+        paid {
+            applicationId "com.udacity.gradle.adsupported.paid"
+        }
+    }
 }
-
-
-
-
-
-
-
 
 
 
@@ -38,7 +40,7 @@ dependencies {
     compile project(path: ':backend', configuration: 'android-endpoints')
     compile 'com.android.support:appcompat-v7:23.1.1'
     //compile 'com.google.android.gms:play-services:8.4.0'
-    compile 'com.google.android.gms:play-services-ads:8.3.0'
+    freeCompile 'com.google.android.gms:play-services-ads:8.3.0'
     //compile 'com.google.android.gms:play-services-identity:8.4.0'
     //compile 'com.google.android.gms:play-services-gcm:8.4.0'
 }

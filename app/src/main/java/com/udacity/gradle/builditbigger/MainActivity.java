@@ -42,7 +42,7 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view){
+    public void tellJoke(View view) {
 
 
         //RandomJokes randomJokes = new RandomJokes();
@@ -50,7 +50,6 @@ public class MainActivity extends ActionBarActivity {
         //Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
 
         new JokeAsyncTask(new JokeReceiveHandler()).execute();
-
 
 
     }
