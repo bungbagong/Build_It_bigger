@@ -9,7 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.bungbagong.androidlib.JokesActivity;
-import com.bungbagong.javalib.RandomJokes;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -46,18 +45,26 @@ public class MainActivity extends ActionBarActivity {
     public void tellJoke(View view){
 
 
-        RandomJokes randomJokes = new RandomJokes();
-        String joke = randomJokes.getJoke();
+        //RandomJokes randomJokes = new RandomJokes();
+        //String joke = randomJokes.getJoke();
         //Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, JokesActivity.class);
-        Log.d("bungbagong", "the string send =" + joke);
-        intent.putExtra("joke", joke);
-
-        startActivity(intent);
+        new JokeAsyncTask(new JokeReceiveHandler()).execute();
 
 
 
+    }
+
+    private class JokeReceiveHandler implements JokeAsyncTask.OnJokeRetrievedListener {
+
+        @Override
+        public void onJokeRetrieved(String joke) {
+            Intent intent = new Intent(MainActivity.this, JokesActivity.class);
+            Log.d("bungbagong", "the string send =" + joke);
+            intent.putExtra("joke", joke);
+
+            startActivity(intent);
+        }
     }
 
 
